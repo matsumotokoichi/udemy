@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+<h1>{{ name }}</h1>
+ <h2>{{ page_url | urlize }}<h2>
+
+<p>BMI : {{bmi | floatformat:2 }} </p>
+<p> {{ salary | default:'データなし' }}</p>
+<p> {{fruits |random|upper }}</p>
+
+<a href="{% url 'template_app:home' first_name='saburo' %}">homeへ</a>
+
+<img src="{% static 'sample.jpg' %}">
