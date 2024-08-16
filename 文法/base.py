@@ -12,6 +12,3 @@ try:
     c = devide(1,0)
 except Exception as e:
     print(e, type(e))
-    
-    
-a = 10 / 10
