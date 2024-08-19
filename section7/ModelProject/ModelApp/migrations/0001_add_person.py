@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('first_name', models.CharField(max_length=30)),
                 ('last_name', models.CharField(max_length=30)),
-                ('birthday', models.DateField(default='1900-01-01')),
+                ('birthday', models.DateField(default='1900-01-01')), # type: ignore
                 ('email', models.EmailField(db_index=True, max_length=254)),
                 ('salary', models.FloatField(null=True)),
                 ('memo', models.TextField()),
