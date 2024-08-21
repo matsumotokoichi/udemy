@@ -26,9 +26,23 @@ p = Person(
 # p.save()
 
 # class create
+"""
 Person.objects.create(
     first_name = 'Jiro', last_name = 'Ito',
     email = 'bb@maail.com', salary = 200000,
     memo = 'classMethods', web_site = None,
     update_at = timezone.datetime.now(pytz.timezone('Asia/Tokyo'))
 )
+"""
+
+# get_or_create
+
+obj, created = Person.objects.get_or_create(
+    first_name = 'Jiro', last_name = 'Ito',
+    email = 'bb@maail.com', salary = 200000,
+    memo = 'classMethods', web_site = None,
+    update_at = timezone.datetime.now(pytz.timezone('Asia/Tokyo'))   
+)
+
+print(obj)
+print(created)
