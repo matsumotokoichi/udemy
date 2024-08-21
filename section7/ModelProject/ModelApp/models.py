@@ -49,3 +49,22 @@ class Schools(models.Model):
 class Prefectures(models.Model):
     
     name = models.CharField(max_length=20)
+    
+class Place(models.Model):
+    
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+    
+    class Meta:
+        db_table = 'place'
+        
+class Restaurants(models.Model):
+    
+    place = models.OneToOneField(
+        Place, on_delete=models.CASCADE,
+        primary_key=True
+    )
+    name = models.CharField(max_length=50)
+    
+    class Meta:
+        db_table = 'restaurants'
